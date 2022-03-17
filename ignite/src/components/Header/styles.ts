@@ -4,12 +4,12 @@ const Container = styled.header`
   background: var(--blue);
 `
 const Content = styled.div`
-max-width: 80%;
-margin: 0 auto;
-padding: 2rem 1rem 12rem;
-display: flex;
-align-items: center;
-justify-content: space-between;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 2rem 1rem 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
 button {
   font-size: 1rem;
