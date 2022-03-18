@@ -1,22 +1,23 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-  background-color: var(--green);
+  background-color: var(--insta-blue);
 `
 
 const Content = styled.div`
-  max-width: 80%;
+  max-height: 7rem;
+  max-width: 85%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   div {
-    max-width: 80%;
     button {
-      font-size: 1rem;
+      font-weight: 500;
+      font-size: 1.1rem;
       color: var(--shape);
-      background: var(--green);
+      background: var(--insta-blue);
       border: 0;
       padding: 0 1.5rem;
       border-radius: 0.25rem;
@@ -30,7 +31,7 @@ const Content = styled.div`
     }
   }
   &.icons {
-    min-width: 10rem;
+    margin-left: 5rem;
   }
 `
 

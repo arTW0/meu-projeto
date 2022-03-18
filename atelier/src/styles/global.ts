@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     --text-title: #363f5f;
     --text-body: #969cb3;
     --shape: #FFFF;
+
+    --insta-deep-blue: #274659;
+    --insta-yellow:#F29F05;
+    --insta-blue: #2484bf;
   }
 
   * {
@@ -20,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: var(--background);
+    background: var(--insta-deep-blue);
     -webkit-font-smoothing: antialiased;
   }
 
