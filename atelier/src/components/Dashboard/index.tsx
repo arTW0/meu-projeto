@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container } from "./styles"
 import { Slide } from "../Slide"
 import { SliderData } from "../Slide/sliderData"
