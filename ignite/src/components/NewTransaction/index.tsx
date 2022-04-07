@@ -1,9 +1,10 @@
-import React, { useState } from "react"
+import React, { FormEvent, useState } from "react"
 import Modal from "react-modal"
 import closeImg from "../../assets/close.svg"
 import incomeImg from "../../assets/income.svg"
 import outcomeImg from "../../assets/outcome.svg"
 import { Container, RadioBox, TransactionType } from "./styles"
+import { api } from "../../services/api"
 
 interface NewTransactionModalProps {
   isOpen: boolean
@@ -11,7 +12,17 @@ interface NewTransactionModalProps {
 }
 
 export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionModalProps) => {
-	const [typeDeposit, setTypeDeposit] = useState('deposit')
+	const [type, setType] = useState('deposit')
+	const [title, setTitle] = useState('')
+	const [value, setValue] = useState(0)
+	const [categoty, setCategory] = useState('')
+
+	const handleCreateNewTransaction = (event: FormEvent) => {
+		event.preventDefault()
+		const data = {type, title, value, categoty}
+
+		api.post('/transactions', data)
+	}
 
 	return (
 		<Modal 
@@ -28,23 +39,28 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
 				<img src={closeImg} alt="Fechar modal" />
 			</button>
 
-			<Container>
+			<Container onSubmit={handleCreateNewTransaction}>
 				<h2>Cadastrar Transação</h2>
 
 				<input 
 					placeholder="Título"
+					value={title}
+					onChange={event => setTitle(event.target.value)}
 				/>
 
 				<input
 					type='number'
 					placeholder="Valor"
+					value={value}
+					onChange={event => setValue(Number(event.target.value))}
 				/>
 
 				<TransactionType>
 					<RadioBox
 						type="button"
-						onClick={() => setTypeDeposit('deposit')}
-						isActive={typeDeposit === 'deposit'}
+						onClick={() => setType('deposit')}
+						isActive={type === 'deposit'}
+						activeColor='green'
 					>
 						<img src={incomeImg} alt="Entrada" />
 						<span>Entrada</span>
@@ -52,8 +68,9 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
 
 					<RadioBox
 						type="button"
-						onClick={() => setTypeDeposit('withdraw')}
-						isActive={typeDeposit === 'withdraw'}
+						onClick={() => setType('withdraw')}
+						isActive={type === 'withdraw'}
+						activeColor='red'
 					>
 						<img src={outcomeImg} alt="Saída" />
 						<span>Saída</span>
@@ -62,6 +79,8 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
 
 				<input
 					placeholder="Categoria"
+					value={categoty}
+					onChange={event => setCategory(event.target.value)}
 				/>
 
 				<button
