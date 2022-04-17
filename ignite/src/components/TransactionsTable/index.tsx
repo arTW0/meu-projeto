@@ -1,25 +1,9 @@
-import React, { useContext, useEffect, useState } from "react"
-import { api } from "../../services/api"
+import React, { useContext } from "react"
 import { TransactionsContext } from "../../TransactionsContext";
 import { Container } from "./styles"
 
-interface Transaction {
-	id: number;
-	title: string;
-	type: 'deposit' | 'withdraw';
-	amount: number;
-	category: string;
-	createdAt: string;
-}
-
 export const TansactionsTable = () => {
-	const [transactions, setTransactions] = useState<Transaction[]>([])
-	const data = useContext(TransactionsContext)
-
-	useEffect(() => {
-		api.get('/transactions')
-			.then(response => setTransactions(response.data.transactions))
-	}, [])
+	const { transactions } = useContext(TransactionsContext)
 
 	return (
 		<Container>
@@ -41,7 +25,7 @@ export const TansactionsTable = () => {
 								{new Intl.NumberFormat('pt-BR', {
 									style: 'currency',
 									currency: 'BRL'
-								}).format(transaction.amount)
+								}).format(transaction.value)
 								}</td>
 							<td>{transaction.category}</td>
 							<td>{new Intl.DateTimeFormat('pt-BR', {
