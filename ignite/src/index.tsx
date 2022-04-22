@@ -16,7 +16,7 @@ createServer ({
 					title: 'Desenvolvimento de website',
 					type: 'deposit',
 					category: 'Desenvolvimento',
-					amount: 1200,
+					value: 1200,
 					createdAt: new Date('2022-02-20 11:00:00'),
 				},
 
@@ -25,7 +25,7 @@ createServer ({
 					title: 'Aluguel',
 					type: 'withdraw',
 					category: 'Casa',
-					amount: 1100,
+					value: 1100,
 					createdAt: new Date('2022-02-22 00:00:00'),
 				}
 			],
