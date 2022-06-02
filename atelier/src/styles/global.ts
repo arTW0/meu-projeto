@@ -3,11 +3,6 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   :root {
     --background: #f0f2f5;
-    --blue: #3364ff;
-    --green: #008e89;
-    --green-light: #33cc95;
-    --blue: #5429cc;
-    --blue-light: #6933ff;
     --text-title: #363f5f;
     --text-body: #969cb3;
     --shape: #FFFF;
@@ -15,6 +10,12 @@ export const GlobalStyle = createGlobalStyle`
     --insta-deep-blue: #274659;
     --insta-yellow:#F29F05;
     --insta-blue: #2484bf;
+
+    --elg-brown: #592D1D;
+    --elg-rose: #D9A796;
+    --elg-off-white: #FBF7E4;
+
+    --elg-deep-pink: #a66f79;
   }
 
   * {
@@ -24,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: var(--insta-deep-blue);
+    background: var(--elg-off-white);
     -webkit-font-smoothing: antialiased;
   }
 

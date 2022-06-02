@@ -7,7 +7,7 @@ const Container = styled.main`
   h1 {
     font-weight: 600;
     font-family: 'Fraunces', sans-serif;
-    color: var(--insta-yellow);
+    color: var(--elg-deep-pink);
     margin: 0 2rem;
     margin-top: 1.5rem;
     display: block;
@@ -16,7 +16,7 @@ const Container = styled.main`
   h3 {
     font-weight: 400;
     font-family: 'Fraunces', sans-serif;
-    color: var(--insta-yellow);
+    color: var(--elg-deep-pink);
     margin: 0 2rem;
     margin-bottom: 1rem;
     display: block;

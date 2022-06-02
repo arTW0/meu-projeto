@@ -12,7 +12,7 @@ export const Dashboard = () => {
       <h3>
         Valor (cada): R$ 200
       </h3>
-     <Slide slides={SliderData}/>
+     {/* <Slide slides={SliderData}/> */}
     </Container>
   )
 }

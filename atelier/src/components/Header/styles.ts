@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-  background-color: var(--insta-blue);
+  background-color: var(--elg-brown);
 `
 
 const Content = styled.div`
@@ -16,8 +16,8 @@ const Content = styled.div`
     button {
       font-weight: 500;
       font-size: 1.1rem;
-      color: var(--shape);
-      background: var(--insta-blue);
+      color: var(--elg-off-white);
+      background: var(--elg-brown);
       border: 0;
       padding: 0 1.5rem;
       border-radius: 0.25rem;
