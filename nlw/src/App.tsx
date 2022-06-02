@@ -1,14 +1,10 @@
 import { Button } from "./components/Button";
+import { Home } from "./pages/Home";
 
 const App = () => {
   return (
-    <div>
-      {/* <Button>Esta é uma children</Button> */}
-      <Button />
-      <Button />
-      <Button />
-    </div>
-  );
+    <Home/>
+  )
 }
 
 export default App;
