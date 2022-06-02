@@ -6,9 +6,8 @@ import googleImage from '../../assets/images/google-icon.svg'
 
 import styles from './styles'
 
-export function Home () {
-  return (
-    <styles.page>
+export const Home = () => {
+  return <styles.page>
       <styles.home>
         <img
           src={illustrationImage}
@@ -19,32 +18,37 @@ export function Home () {
       </styles.home>
       <styles.login>
         <div className='main-content'>
-          <img
-            className='logo'
-            src={logoImage}
-            alt="Letmeask"
-          />
-          <button>
+          <div>
+            <img
+              className='logo'
+              src={logoImage}
+              alt="Letmeask"
+            />
+          </div>
+          <button className='create-room'>
             <img 
               src={googleImage} 
               alt="google logo" 
             />
             Crie sua sala com o Google
           </button>
-          <div>ou entre em um sala</div>
-          <form>
-            <input 
-              type="text" 
-              placeholder="Digite o código da sala" 
-            />
-            <button 
-              type="submit"
-            >
-              Entrar na sala
-            </button>
-          </form>
+          <div
+            className='separator'
+          >
+            ou entre em um sala
+          </div>
+          <input
+            className='log-code'
+            type="text" 
+            placeholder="Digite o código da sala" 
+          />
+          <button 
+            className='log-button'
+            type="submit"
+          >
+            Entrar na sala
+          </button>
         </div>
       </styles.login>
     </styles.page>
-  )
 }
