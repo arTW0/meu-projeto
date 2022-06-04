@@ -5,6 +5,7 @@ import logoImage from '../../assets/images/logo.svg'
 import googleImage from '../../assets/images/google-icon.svg'
 
 import styles from './styles'
+import { Button } from '../../components/Button/Button'
 
 export const Home = () => {
   return <styles.page>
@@ -42,12 +43,12 @@ export const Home = () => {
             type="text" 
             placeholder="Digite o código da sala" 
           />
-          <button 
+          <Button 
             className='log-button'
             type="submit"
           >
             Entrar na sala
-          </button>
+          </Button>
         </div>
       </styles.login>
     </styles.page>
