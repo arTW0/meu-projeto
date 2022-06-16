@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { createContext, useState } from 'react'
+import Form from './components/Form'
+import styles from './Styles'
 
-const App = () => {
-  return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
-  );
+type Context = {
+  toggleTheme: () => void
+  theme: string
 }
 
-export default App;
+export const ThemeContext = createContext<Context | null>(null)
+
+const App = () => {
+  const [theme, setTheme] = useState('dark')
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
+
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <styles.main id={theme} >
+      <Form />
+      <div>
+        <label>
+          {theme === 'light' ? 'Light Mode' : 'Dark Mode'}
+        </label>
+        <button
+          onChange={toggleTheme}
+        >
+          Change
+        </button>
+
+
+      </div>
+    </styles.main>
+  </ThemeContext.Provider>
+}
+
+export default App

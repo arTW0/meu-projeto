@@ -1,75 +1,31 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "plugins": [
-    "import",
-    "@typescript-eslint",
-    "eslint-plugin-import-helpers"
-  ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "sourceType": "module"
-  },
-  "rules": {
-    "@typescript-eslint/no-explicit-any": 0,
-    "no-unused-vars": 0,
-    "node/no-unsupported-features/es-syntax": 0,
-    "strict": 0,
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "never"
-    ],
-    "func-names": "off",
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
-    "import-helpers/order-imports": [
-      "warn",
-      {
-        "newlinesBetween": "always",
-        "groups": [
-          "module",
-          "/^@/"
-        ],
-        "alphabetize": {
-          "order": "asc",
-          "ignoreCase": true
-        }
-      }
-    ],
-    "react/prop-types": 0
-  },
-  "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [
-        ".ts",
-        ".tsx"
-      ]
+    "env": {
+        "browser": true,
+        "es2021": true
     },
-    "import/resolver": {
-      "typescript": {
-        "alwaysTryTypes": true
-      }
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "indent": ["error", "tab"]
+    },
+    "settings": {
+        "react": {
+            "version": "17.0.2"
+        }
     }
-  }
 }
